@@ -18,8 +18,9 @@
       }
     },
     "web": {
+      "publicPath": "./_expo/static",
       "bundler": "metro",
-      "output": "server",
+      "output": "./server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
