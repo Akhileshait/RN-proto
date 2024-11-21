@@ -5,10 +5,11 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import LoginScreen from './LoginScreen';
+import OtpVerify from './otp-verify';
 
 export default function HomeScreen() {
   return (
-    <LoginScreen></LoginScreen>
+    <OtpVerify></OtpVerify>
   );
 }
 
