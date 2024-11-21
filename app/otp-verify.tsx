@@ -41,26 +41,26 @@ export default function OtpVerify() {
     }
     window.FlutterChannel.postMessage("otp_verified");
 
-    const resp = await fetch("http://gbmp.spring.money:3000/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        is_tnc_agreed: true,
-        mobile_number: mobileNo,
-        otp: otp.join(""),
-      }),
-    });
+    // const resp = await fetch("http://gbmp.spring.money:3000/user/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     is_tnc_agreed: true,
+    //     mobile_number: mobileNo,
+    //     otp: otp.join(""),
+    //   }),
+    // });
 
-    const respJson = await resp.json();
+    // const respJson = await resp.json();
 
-    if (respJson && respJson.statusCode === 200) {
-      // console.log(window);
-      console.log("Logged in successfully")
-    } else {
-      console.error("Error logging in", respJson);
-    }
+    // if (respJson && respJson.statusCode === 200) {
+    //   // console.log(window);
+    //   console.log("Logged in successfully")
+    // } else {
+    //   console.error("Error logging in", respJson);
+    // }
   };
 
   const handleKeyPress = (e:any, idx:number) => {
