@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, TextInputKeyPressEventData } from "react-native";
-import { useNavigation, useRouter } from "expo-router";
+import {  useRouter } from "expo-router";
 import Checkbox from 'expo-checkbox';
 import {setItem, getItem} from "./utils/AsyncStorage.js";
 

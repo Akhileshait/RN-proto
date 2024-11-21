@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import {setItem, getItem} from "./utils/AsyncStorage.js";
 
 const LoginScreen = () => {
