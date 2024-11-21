@@ -16,7 +16,7 @@ export default function OtpVerify() {
   const otpServiceDown = false;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const mobileNumber = urlParams.get('mobile_number');
+  const mobileNumber = urlParams.get('mobile');
 
 
   const handleInputChange = (text:string, ind:number) =>{
@@ -55,6 +55,7 @@ export default function OtpVerify() {
     const respJson = await resp.json();
 
     if (respJson && respJson.statusCode === 200) {
+      // console.log(window);
       window.FlutterChannel.postMessage("otp_verified");
       console.log("Logged in successfully")
     } else {
