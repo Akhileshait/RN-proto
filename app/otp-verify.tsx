@@ -39,6 +39,7 @@ export default function OtpVerify() {
     if (otp.join("").length !== 6) {
       return;
     }
+    window.FlutterChannel.postMessage("otp_verified");
 
     const resp = await fetch("http://gbmp.spring.money:3000/user/login", {
       method: "POST",
@@ -56,7 +57,6 @@ export default function OtpVerify() {
 
     if (respJson && respJson.statusCode === 200) {
       // console.log(window);
-      window.FlutterChannel.postMessage("otp_verified");
       console.log("Logged in successfully")
     } else {
       console.error("Error logging in", respJson);
