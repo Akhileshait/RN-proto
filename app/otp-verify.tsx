@@ -15,6 +15,10 @@ export default function OtpVerify() {
   const incorrectOtp = false;
   const otpServiceDown = false;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const mobileNumber = urlParams.get('mobile_number');
+
+
   const handleInputChange = (text:string, ind:number) =>{
     const newOtp = [...otp];
     newOtp[ind] = text;
@@ -26,7 +30,7 @@ export default function OtpVerify() {
   }
 
   const handleVerifyOtp = async () => {
-    const mobileNo = await getItem("mobileNo");
+    const mobileNo = mobileNumber;
     console.log(mobileNo, otp.join(""));
     if (!mobileNo) {
       router.push("/LoginScreen");
@@ -51,6 +55,7 @@ export default function OtpVerify() {
     const respJson = await resp.json();
 
     if (respJson && respJson.statusCode === 200) {
+      window.FlutterChannel.postMessage("otp_verified");
       console.log("Logged in successfully")
     } else {
       console.error("Error logging in", respJson);
